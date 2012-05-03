@@ -57,7 +57,7 @@ var createSeek = function() {
     video_timer = $('.video-timer');
     
     if(video.readyState) {
-		var video_duration = videoJQ.attr('duration');
+		var video_duration = video.duration;
 		video_seek.slider({
 			value: 0,
 			step: 0.01,
