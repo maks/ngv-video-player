@@ -15,24 +15,20 @@ function playPauseVideo() {
     
     if (!video.paused) {
         video.pause();
-        displayPlayButton();
     } else {
         video.play();
-        displayPauseButton();
     }            
     return false;
 }
 
-function displayPlayButton() {
-    playLinkJQ.text("Play");
-    playLinkJQ.toggleClass("pause_button");
-    playLinkJQ.toggleClass("play_button");
-}
-
-function displayPauseButton() {
-    playLinkJQ.text("Pause");
-    playLinkJQ.toggleClass("pause_button");
-    playLinkJQ.toggleClass("play_button");
+function updatePlayPauseButton() {
+    if (!video.paused) {
+        playLinkJQ.text("Play");
+        playLinkJQ.toggleClass("play_button");
+    } else {
+        playLinkJQ.text("Pause");
+        playLinkJQ.toggleClass("pause_button");
+    }            
 }
 
 
@@ -116,15 +112,15 @@ function videoInit() {
 
     //attach to events to pick usage of right-click menu video controls
     videoJQ.bind('play', function() {
-        displayPauseButton();
+        updatePlayPauseButton();
     });
 
     videoJQ.bind('pause', function() {
-        displayPlayButton();
+        updatePlayPauseButton();
     });
 
     videoJQ.bind('ended', function() {
-        displayPlayButton();
+        updatePlayPauseButton();
     });
     
     createSeek();
