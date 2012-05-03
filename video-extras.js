@@ -22,7 +22,7 @@ function playPauseVideo() {
 }
 
 function updatePlayPauseButton() {
-    if (!video.paused) {
+    if (video.paused) {
         playLinkJQ.text("Play");
         playLinkJQ.toggleClass("play_button");
     } else {
