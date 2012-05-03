@@ -24,10 +24,10 @@ function playPauseVideo() {
 function updatePlayPauseButton() {
     if (video.paused) {
         playLinkJQ.text("Play");
-        playLinkJQ.toggleClass("play_button");
+        playLinkJQ.removeClass().addClass("play_button");
     } else {
         playLinkJQ.text("Pause");
-        playLinkJQ.toggleClass("pause_button");
+        playLinkJQ.removeClass().addClass("pause_button");
     }            
 }
 
