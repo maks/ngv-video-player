@@ -2,8 +2,6 @@
     Based on concept from: http://dev.opera.com/articles/view/custom-html5-video-player-with-css3-and-jquery/ 
  
     @author Maksim Lin <maks@manichord.com>
- 
-    
  */
 
 var videoJQ,
@@ -27,12 +25,14 @@ function playPauseVideo() {
 
 function displayPlayButton() {
     playLinkJQ.text("Play");
-    playLinkJQ.toggleClass("play_button pause_button");
+    playLinkJQ.toggleClass("pause_button");
+    playLinkJQ.toggleClass("play_button");
 }
 
 function displayPauseButton() {
     playLinkJQ.text("Pause");
-    playLinkJQ.toggleClass("play_button pause_button");
+    playLinkJQ.toggleClass("pause_button");
+    playLinkJQ.toggleClass("play_button");
 }
 
 
@@ -40,7 +40,7 @@ var createSeek = function() {
     video_seek = $('.video-seek');
     video_timer = $('.video-timer');
     
-	if(video.readyState) {
+    if(video.readyState) {
 		var video_duration = videoJQ.attr('duration');
 		video_seek.slider({
 			value: 0,
@@ -95,7 +95,7 @@ function makeFullScreen() {
 }
 
 function videoInit() {
-    //console.log("video init running");
+    console.log("video init running");
     
     // Check if HTML5 video supported and do nothing if not
     if( !document.createElement('video').canPlayType ) {
