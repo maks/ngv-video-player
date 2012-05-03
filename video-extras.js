@@ -129,7 +129,10 @@ function videoInit() {
     videoJQ = $("video"),
     video = videoJQ[0],
     playLinkJQ =  $("#play_pause_video");
-
+    
+    if (videoJQ.hasClass("clickplay")) {
+        videoJQ.click(playPauseVideo);    
+    }
 
     videoJQ.removeAttr("controls");
     
