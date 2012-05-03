@@ -118,7 +118,6 @@ function makeFullScreen() {
 }
 
 function videoInit() {
-    console.log("video init running");
     
     // Check if HTML5 video supported and do nothing if not
     if( !document.createElement('video').canPlayType ) {
